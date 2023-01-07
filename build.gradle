@@ -1,0 +1,50 @@
+buildscript{
+	ext{ //bulid.gradle에서 사용할 전역변수 설정
+		springBootVersion = '2.1.7.RELEASE' //2.7.1 release를 의존성으로 받겠다는 의미
+	}
+	repositories{ //원격 저장소 생성
+		mavenCentral()
+	}
+	dependencies{
+		classpath("org.springframework.boot:spring-boot-" +
+				"gradle-plugin:${springBootVersion}")
+	}
+
+}
+apply plugin: 'java' //자바와 스프링부트를 사용하기 위한 플러그인
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management' //스프링부트의 의존성 관리해주는 플러그인
+
+group 'com.project'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-web')
+
+	//lombok
+	implementation('org.projectlombok:lombok')
+	annotationProcessor('org.projectlombok:lombok')
+	testImplementation('org.projectlombok:lombok')
+	testAnnotationProcessor('org.projectlombok:lombok')
+
+	//db
+	//Spring Data Jpa 추상화 라이브러리
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	//mysql
+	/* implementation('com.h2database:h2') */
+	implementation('mysql:mysql-connector-java')
+	//thymeleaf
+	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencies {
+	runtimeOnly 'org.webjars:bootstrap:4.5.0'
+}

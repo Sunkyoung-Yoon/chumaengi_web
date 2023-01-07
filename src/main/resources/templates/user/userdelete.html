@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css?v1}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css?v1}">
+    <title>User Delete</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Skranji&display=swap');
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+<form class="userDeleteForm">
+    <div class="box">
+        <img class="icon" src="/img/iconlogo.png" width="180px">
+        <br>
+        <h1 style="margin-bottom: 0;font-family: 'Skranji', cursive;">Chumaengi</h1>
+        <h4 style="margin: 0 0 40px 0;font-family: 'Noto Sans KR', sans-serif;">추수를 향해 달려가는 알맹이</h4>
+        <div class="allOfElement">
+            <div>
+                <input id="loginID" th:value="${usermyList.userid}" name="password" type="text" style="height:40px;border: none"/>님</input>
+            </div>
+            <div>
+                <input id="loginPW" name="password" type="password" placeholder="비밀번호" style="width:97%;height:40px"/>
+            </div>
+            <div id="button">
+                <button type="button" class="signupBtn" id="user-delete" style="width:48%;height:40px;">탈퇴</button>
+                <button button="button" class="signupBtn" style="width:48%;height:40px;">
+                    <a th:href="@{|/|}" style="text-decoration: none;color: white">취소</a></button>
+            </div>
+        </div>
+    </div>
+</form>
+<footer th:insert="common/footer.html"></footer>
+<script src="/js/index.js"></script>
+</body>
+</html>

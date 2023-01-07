@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css?v1}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css?v1}">
+    <title>Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Skranji&display=swap');
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+<form class="updateForm">
+    <div class="box">
+        <img class="icon" src="/img/iconlogo.png" width="180px">
+        <br>
+        <h1 style="margin-bottom: 0;font-family: 'Skranji', cursive;">Chumaengi</h1>
+        <h4 style="margin: 0 0 20px 0;font-family: 'Noto Sans KR', sans-serif;">추수를 향해 달려가는 알맹이</h4>
+        <br>
+        <div class="allOfElement">
+            <div>
+                <input id="userName" type="text" th:value="${usermyList.username}"readonly style="width:45%;height:40px"/>
+                <input id="userNickname" type="text" th:value="${usermyList.nickname}" style="width:48%;height:40px"/>
+            </div>
+            <div>
+                <input id="userID" type="text" th:value="${usermyList.userid}" readonly  style="width:45%;height:40px"/>
+                <input id="userPW" type="password"  th:value="${usermyList.password}" style="width:48%;height:40px"/>
+            </div>
+            <div>
+                <input id="userEmail" type="text" th:value="${usermyList.email}" style="width:97%;height:40px"/>
+            </div>
+            <div>
+                <input id="userPhone" type="text" th:value="${usermyList.phone}" style="width:97%;height:40px"/>
+            </div>
+            <div>
+                <input id="userAddress" type="text" th:value="${usermyList.address}" style="width:97%;height:40px"/>
+            </div>
+            <button button="button" class="signupBtn" style="width:33%;height:40px;">
+                <a th:href="@{|/user/mypage/${usermyList.userid}|}" style="color: white;text-decoration: none">취소</a></button>
+            <button type="button" class="signupBtn" style="width:33%;height:40px;" id="user-update">수정</button>
+            <button type="button" class="signupBtn" style="width:30%;height:40px;">
+                <a th:href="@{|/user/delete/${usermyList.userid}|}" style="color: white;text-decoration: none">탈퇴</a></button>
+        </div>
+    </div>
+</form>
+<footer th:insert="common/footer.html"></footer>
+<script src="/js/index.js"></script>
+</body>
+</html>

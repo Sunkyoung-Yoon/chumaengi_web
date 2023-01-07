@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css?v1}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css?v1}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/board.css?v1}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>회원 목록</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Skranji&display=swap');
+    </style>
+    <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<body>
+<header th:insert="common/header.html"></header>
+<!--회원 전체 목록-->
+<div class="pic"><img src="/img/userlist.jpg" width="100%" style="margin-bottom: 30px;height:200px;">
+    <span class="text" style="font-family: 'Noto Sans KR', sans-serif;">회원 목록</span></div>
+<div class="container">
+    <table class="table">
+        <thead class="thead-light">
+        <tr class="text-center">
+            <th scope="col">회원번호</th>
+            <th scope="col">아이디</th>
+            <th scope="col" class="d-none d-sm-table-cell">이름</th>
+            <th scope="col">닉네임</th>
+            <th scope="col" class="d-none d-sm-table-cell">이메일</th>
+            <th scope="col" class="d-none d-sm-table-cell">연락처</th>
+            <th scope="col" class="d-none d-sm-table-cell">주소</th>
+            <th scope="col">삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" th:each="user:${userList}">
+            <td th:text="${user.uid}"></td>
+            <td th:text="${user.userid}"></td>
+            <td th:text="${user.username}" class="d-none d-sm-table-cell"></td>
+            <td th:text="${user.nickname}"></td>
+            <td th:text="${user.email}" class="d-none d-sm-table-cell"></td>
+            <td th:text="${user.phone}" class="d-none d-sm-table-cell"></td>
+            <td th:text="${user.address}" class="d-none d-sm-table-cell"></td>
+            <td><a th:href="@{|/user/userfindAlldelete/${user.userid}|}" style="color: lightslategray">삭제</a></td>
+        </tbody>
+    </table>
+</div>
+<footer th:insert="common/footer.html"></footer>
+<script src="/js/index.js"></script>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
