@@ -22,10 +22,11 @@
 * androidstudio, TensorFlowLite
 
 ## 팀원 역할
-![image](https://user-images.githubusercontent.com/97610532/211257149-3ed77e05-3496-4f37-a085-7f0d5df0e262.png)
+<img src="https://user-images.githubusercontent.com/97610532/212548229-7cf626c7-8164-496d-8c62-35746bb91a4f.png" width="600" height="400"/>
+
 
 ## DB 설계
-<img src="https://user-images.githubusercontent.com/97610532/211457617-d483e725-ce60-4a6b-a9f9-38c289f39044.png" width="500" height="400"/>
+<img src="https://user-images.githubusercontent.com/97610532/212548663-8c9ff573-3dee-4742-b84d-e07ca6e307a2.png" width="600" height="400"/>
 
 ## 동작 과정
 * 웹
