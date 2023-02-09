@@ -16,7 +16,7 @@
   * 추맹이 웹에서 로그인, 회원가입, 공지사항, QnA, 정보공유, 관리자 페이지 구현에 필요한 Domain, Service, Controller, Dto, JS 작성을 담당했습니다.
 
 ## 개발 환경
-* HTML5, CSS3, JavaScript, Bootstrap, Ajax, JQuery
+* HTML5, CSS3, JavaScript, Bootstrap
 * Springboot, MySQL, Java 11.0.13
 * Streamlit, pandas, plotly, python
 * androidstudio, TensorFlowLite
